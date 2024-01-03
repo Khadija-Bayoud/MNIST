@@ -53,7 +53,7 @@ def train_model(model, train_loader, test_loader, optimizer, criterion, num_epoc
             inputs, labels = batch
             
             # inputs of size (batch_size, 1, 28 * 28)
-            # inputs = inputs.view(inputs.size(0), -1) uncomment it if you're using FCN
+            inputs = inputs.view(inputs.size(0), -1) # uncomment it if you're using FCN
             
             # 1 : Forward 
             outputs = model(inputs)     
@@ -81,7 +81,7 @@ def train_model(model, train_loader, test_loader, optimizer, criterion, num_epoc
         model.eval()
         for inputs, labels in test_loader:
             with torch.no_grad():
-                # inputs = inputs.view(inputs.size(0), -1) uncomment it if you're using FCN
+                inputs = inputs.view(inputs.size(0), -1) # uncomment it if you're using FCN
                 outputs = model(inputs)
                 
             loss = criterion(outputs, labels)
