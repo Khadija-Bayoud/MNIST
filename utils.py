@@ -106,15 +106,15 @@ def visualization(train_losses, train_accuracy, val_losses, val_accuracy):
     plt.plot(epochs, val_losses, label='Validation Loss', color='orange')
     plt.xlabel('Epochs')
     plt.ylabel('Loss')
-    plt.title('Training and Validation Losses')
+    plt.title('Training and Validation Loss')
     plt.legend()
     
     plt.subplot(1, 2, 2)
     plt.plot(epochs, train_accuracy, label='Training Accuracy', color='blue')
     plt.plot(epochs, val_accuracy, label='Validation Accuracy', color='orange')
-    plt.xlabel('Epochs - Folds')
+    plt.xlabel('Epochs')
     plt.ylabel('Accuracy')
-    plt.title('Training and Validation Accuracies')
+    plt.title('Training and Validation Accuracy')
     plt.legend()
     
     plt.tight_layout()
